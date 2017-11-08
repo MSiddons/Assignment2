@@ -6,7 +6,7 @@
 using namespace std;
 
 bool same_elements(vector<int> a, vector<int> b);
-bool element_compare(vector <int> a, vector<int> b);
+int element_count(vector <int> a, int i, int c);
 
 
 int main()
@@ -33,22 +33,32 @@ int main()
 		cout << "The two sequences are identical." << endl;
 	else
 		cout << "The two sequences are not identical." << endl;;
+	return 0;
 }
 
 bool same_elements(vector<int> a, vector<int> b)
 {
-	if (a.size == b.size)
+	int count1 = 0, count2 = 0;
+	if (a.size() == b.size())
 	{
-
+		for (unsigned i = 0; i < a.size(); i++)
+		{
+			int d = a[i];
+			if (element_count(a, d, count1) != element_count(b, d, count2))
+				return false;
+		}
 		return true;
 	}
 	else
 		return false;
 }
 
-bool element_compare(vector<int> a, vector<int> b)
+int element_count(vector<int> a, int d, int c)
 {
-	for (int i=0; i<a.size; i++)
-		if (a[i] )
-	return false;
+	for (unsigned n = 0; n < a.size(); n++)
+	{
+		if (d == a[n])
+			c++;
+	}
+	return c;
 }
