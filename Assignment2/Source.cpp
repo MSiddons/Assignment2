@@ -1,4 +1,4 @@
-// Project by Martin Siddons
+// code produced by Martin Siddons
 
 #include <iostream>
 #include <vector>
